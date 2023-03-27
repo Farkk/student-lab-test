@@ -1,20 +1,14 @@
 import Head from 'next/head'
-import Button from '@/components/buttons/Buttons'
 import Categories from '@/components/categories/Categories'
-import { TagsData } from '@/components/models/models'
-import { DataTagQuetes } from '@/components/models/models'
-import { useState } from 'react'
+import { QuetesData } from '@/components/models/models'
+import Buttons from '../buttons/Buttons'
 
 
-export default function Home(data: DataTagQuetes) {
+export default function TagQuote(quetes: QuetesData) {
 
-	const arrIdQuote: string[] = data.data.results.map(quote => {
+	const arrIdQuote: string[] = quetes.quetes.map(quote => {
 		return quote._id
 	})
-
-	const tagsData: TagsData = {
-		tags: data.tags
-	}
 
 	return (	
   		<>
@@ -29,39 +23,23 @@ export default function Home(data: DataTagQuetes) {
 				<div className='mx-auto w-1/2  flex justify-evenly'>
 					<div className='w-2/5 pr-3 pl-2'>
 						{
-							data.data.results.map((quote, i) => {
+							quetes.quetes.map(quote => {
 								return (
 									<div key={quote._id} className=' mb-9'>
 										<div className='flex gap-12 items-center'>
 											<div className='flex gap-5 text-left'>
 												<div className='w-96 text-lg'>“{quote.content}”<br/><span className='font-bold'>― {quote.author}</span></div>
 											</div>
-											<Button btnId={quote._id} arrIdQuote={arrIdQuote}/>	
+											<Buttons btnArrId={arrIdQuote} btnId={quote._id}/>	
 										</div>
 									</div>				 
 								)
 							})
 						}
 					</div>	
-					<Categories tags={tagsData.tags}/>
+					<Categories tags={quetes.tags}/>
 				</div>
 			</main>
   		</>
-)
-}
-
-
-Home.getInitialProps = async () => {
-	const responseTags = await fetch('https://api.quotable.io/tags')
-	const jsonTags: DataTagQuetes[] = await responseTags.json()
-
-	const response = await fetch(`https://api.quotable.io/quotes/?tags=famous-quotes`)
-	const json: DataTagQuetes[] = await response.json()
-	
-
-	return {	
-		data: json,
-		tags: jsonTags
-	}
-
+	)	
 }
