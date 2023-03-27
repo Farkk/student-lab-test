@@ -55,9 +55,3 @@ export interface QuetesData {
 export interface btnProps {
 	btnId: string,
 }
-
-export interface btnObj {
-	obj: {
-		string: boolean
-	}
-}

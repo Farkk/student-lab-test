@@ -1,16 +1,10 @@
 import Head from 'next/head'
-import Button from '@/components/buttons/Buttons'
+import Button from '@/components/button/Button'
 import Categories from '@/components/categories/Categories'
 import { TagsData } from '@/components/models/models'
 import { DataTagQuetes } from '@/components/models/models'
-import { useState } from 'react'
-
 
 export default function Home(data: DataTagQuetes) {
-
-	const arrIdQuote: string[] = data.data.results.map(quote => {
-		return quote._id
-	})
 
 	const tagsData: TagsData = {
 		tags: data.tags
@@ -36,7 +30,7 @@ export default function Home(data: DataTagQuetes) {
 											<div className='flex gap-5 text-left'>
 												<div className='w-96 text-lg'>“{quote.content}”<br/><span className='font-bold'>― {quote.author}</span></div>
 											</div>
-											<Button btnId={quote._id} arrIdQuote={arrIdQuote}/>	
+											<Button btnId={quote._id}/>	
 										</div>
 									</div>				 
 								)
@@ -58,7 +52,6 @@ Home.getInitialProps = async () => {
 	const response = await fetch(`https://api.quotable.io/quotes/?tags=famous-quotes`)
 	const json: DataTagQuetes[] = await response.json()
 	
-
 	return {	
 		data: json,
 		tags: jsonTags

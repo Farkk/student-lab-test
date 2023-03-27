@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Categories from '@/components/categories/Categories'
 import { QuetesData } from '@/components/models/models'
-import Buttons from '../buttons/Buttons'
+import Buttons from '../button/Button'
 
 
 export default function TagQuote(quetes: QuetesData) {
