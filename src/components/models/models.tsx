@@ -1,55 +1,52 @@
-export interface DataTagQuetes {
+export interface childrenProps extends allTags {
+	children: React.ReactNode,
+	header: string
+}
+
+export interface DataQuetes extends allTags {
 	data: {
 		results: [
-			quetes: {
+			quete: {
 				_id: string,
 				content: string,
 				author: string
 			}
-		]
-	},
-	tags: [
-		tagsObj: {
-			name: string,
-			_id: string
-		}
-	]
-	
+		]		
+	}
+
 }
 
 
-export interface TagsData {
+export interface DataQuetesTag extends DataQuetes{
+	query: string
+}
+
+export interface allTags {
 	tags: [
-		tag: {
+		tagsObj: {
 			name: string,
 			_id: string,
+			quoteCount: number
 		}
 	]
+}
 
+export interface QuoteProps {
+	data: {
+		quete: {
+			_id: string,
+			content: string,
+			author: string,
+			tags: string[]
+		}
+	}
+	
 }
 
 export interface Query {
 	query: {
 		id: string
 	}
-}
-
-export interface QuetesData {
-	quetes: [
-		quete: {
-			_id: string,
-			content: string,
-			author: string,
-		}
-	],
-	tags: [
-		tag:{
-			name: string,
-			_id: string
-		}
-	]
-	
-
 }
 
 export interface btnProps {

@@ -9,7 +9,21 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '360': '360px',
+        '630': '630px'
+      },
+      maxWidth: {
+        'ty': '630px',
+        'ty2': '550px',
+        'ty3': '686px',
+        'ty4': '360px',
+      },
+      spacing: {
+        '30': '30px',
+      }
+    },
   },
   plugins: [],
 }

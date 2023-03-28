@@ -1,7 +1,8 @@
-import { useState, useEffect, use } from "react"
-import {FcLike} from 'react-icons/fc'
-import {FcLikePlaceholder} from 'react-icons/fc'
+import { useState, useEffect} from "react"
+import {AiFillHeart} from 'react-icons/ai'
+import {AiOutlineHeart} from 'react-icons/ai'
 import { btnProps } from "../models/models"
+
 
 export default function Button({btnId}: btnProps) {
 
@@ -30,10 +31,11 @@ export default function Button({btnId}: btnProps) {
 			setIsLike(true)
 		}
 	}
+
 	return (
-		<button onClick={onClickToLike} className='w-4 h-4'>
+		<button onClick={onClickToLike} className='w-7 h-7' >
 			{
-				isLike ? <FcLike/> : <FcLikePlaceholder/>
+				isLike ? <AiFillHeart className='w-7 h-7'/> : <AiOutlineHeart className='w-7 h-7'/>
 			}
 		</button>
 	)
