@@ -1,10 +1,11 @@
 import { childrenProps } from "../models/models"
 import Head from "next/head"
-import {GrHomeRounded} from 'react-icons/gr'
+import { GrHomeRounded } from 'react-icons/gr'
 import Categories from "../categories/Categories"
 import Link from "next/link"
+import Burger from "../burger/Burger"
 
-export default function MainLayout({ children, header, tags }:childrenProps) {
+export default function MainLayout({ children, header, tags }: childrenProps) {
 	return (
 		<>
 			<Head>
@@ -13,32 +14,36 @@ export default function MainLayout({ children, header, tags }:childrenProps) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<nav className="bg-slate-200 mb-16">
-				<div className="mx-auto max-w-6xl py-5 flex gap-28 items-center">
-					<Link href='/'><h1 className="text-2xl">Quotes library</h1></Link>
-					<div className="flex gap-2 items-center text-xl homeLink">
-						<GrHomeRounded/>
-						<Link href='/'>Home</Link>
+			<header className="bg-slate-200 mb-16">
+				<nav className="
+					items-center justify-between
+					md:justify-start gap-7 px-3 md:px-8
+					lg:px-5 mx-auto max-w-6xl py-5 flex md:gap-28">
+					<Link href='/'><h1 className="text-2xl hover:opacity-70">Quotes library</h1></Link>
+					<Link className="hover:opacity-70 flex gap-2 items-center text-xl homeLink" href='/'>
+						<GrHomeRounded />
+						Home
+					</Link>
+					<div className="md:hidden flex">
+						<Burger tags={tags}></Burger>
 					</div>
-				</div>
-			</nav>
+				</nav>
+			</header>
 			<main className='w-full h-screen'>
-				<div className="mx-auto max-w-6xl">
-					<div className="flex gap-20">
-						<div className="max-w-ty3">
-							<div className="h-14 max-w-ty border-b-2 border-black mb-5">
-								<h2 className="text-2xl">{header}</h2>
-							</div>
-							{children}
+				<div className="mx-auto lg:px-5 lg:max-w-5xl xl:max-w-6xl">
+					<aside className="hidden md:block md:mb-6 md:mx-auto max-w-ty4 lg:float-right">
+						<div className="border-b-2 border-black w-360  mb-4">
+							<h2 className="md:text-center text-2xl mb-5">Categories</h2>
 						</div>
-						<div className="max-w-ty4 mt-9">
-							<div className="border-b-2 border-black w-360  mb-4">
-								<h2 className="text-2xl mb-5">Categories</h2>
-							</div>
-							<div className="bg-slate-200 py-5 px-9 flex gap-20">
-								<Categories tags={tags}/>
-							</div>
+						<div className="bg-slate-200 py-5 px-9 flex gap-20">
+							<Categories tags={tags} />
 						</div>
+					</aside>
+					<div className="md:max-w-ty4 md:mx-auto lg:max-w-ty2 xl:max-w-ty3 lg:float-left">
+						<div className="w-full text-center  lg:text-left h-14 border-b-2 border-black mb-5">
+							<h2 className="text-2xl">{header}</h2>
+						</div>
+						{children}
 					</div>
 				</div>
 			</main>

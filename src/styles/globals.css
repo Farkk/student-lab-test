@@ -1,11 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-* {
+imp * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+li:hover {
+  opacity: 0.5;
+}
+
+home:hover {
+  opacity: 0.5;
 }
 
 html,
@@ -19,23 +30,35 @@ a {
   text-decoration: none;
 }
 
-
-h1, h2 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
   font-weight: 700;
 }
 
 span {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
 
-p, li {
-  font-family: 'Open Sans', sans-serif;
+p,
+li {
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
 }
 
 .homeLink {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 500;
+}
+
+.loaderContainer {
+  display: flex;
+  height: 100vh;
+}
+
+.loaderContainer img {
+  display: inline-block;
+  margin: 0 auto;
+  width: 200px;
 }

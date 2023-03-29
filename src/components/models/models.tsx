@@ -9,15 +9,16 @@ export interface DataQuetes extends allTags {
 			quete: {
 				_id: string,
 				content: string,
-				author: string
+				author: string,
+				tags: string[]
 			}
-		]		
+		]
 	}
 
 }
 
 
-export interface DataQuetesTag extends DataQuetes{
+export interface DataQuetesTag extends DataQuetes {
 	query: string
 }
 
@@ -32,15 +33,12 @@ export interface allTags {
 }
 
 export interface QuoteProps {
-	data: {
-		quete: {
-			_id: string,
-			content: string,
-			author: string,
-			tags: string[]
-		}
+	quote: {
+		_id: string,
+		content: string,
+		author: string,
+		tags: string[]
 	}
-	
 }
 
 export interface Query {

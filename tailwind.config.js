@@ -19,6 +19,8 @@ module.exports = {
         'ty2': '550px',
         'ty3': '686px',
         'ty4': '360px',
+        'ty5': '492px',
+        'ty6': '434px'
       },
       spacing: {
         '30': '30px',
