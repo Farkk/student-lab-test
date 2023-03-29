@@ -5,12 +5,11 @@ import { btnProps } from "../models/models"
 
 export default function Button({ btnId }: btnProps) {
 	const [isBrowser, setIsBrowser] = useState(false)
+	const [isLike, setIsLike] = useState(false)
 
 	useEffect(() => {
 		setIsBrowser(true)
 	}, [])
-
-	const [isLike, setIsLike] = useState(false)
 
 	useEffect(() => {
 		setIsLike(JSON.parse(localStorage.getItem(`${btnId}`) || 'false'))
@@ -22,12 +21,12 @@ export default function Button({ btnId }: btnProps) {
 		if (isNewLike) {
 			localStorage.setItem(`${btnId}`, JSON.stringify(false))
 			setIsLike(false)
-		}
-		if (!isNewLike) {
+		} else {
 			localStorage.setItem(`${btnId}`, JSON.stringify(true))
 			setIsLike(true)
 		}
 	}
+
 	return (
 		<button onClick={onClickToLike} className='w-7 h-7'>
 			{
@@ -36,5 +35,3 @@ export default function Button({ btnId }: btnProps) {
 		</button>
 	)
 }
-
-

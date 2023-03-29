@@ -7,7 +7,6 @@ import { useRouter } from "next/router"
 
 export default function Burger({ tags }: allTags) {
 	const query: any = useRouter().query.id
-
 	const [close, setClose] = useState('hidden')
 	const [queryId, setQueryId] = useState('')
 
@@ -15,13 +14,14 @@ export default function Burger({ tags }: allTags) {
 		setClose('hidden')
 	}
 	const onOpenBurger = () => {
-		setClose('active')
+		setClose('')
 	}
 
 	if (query !== queryId) {
 		setQueryId(query)
 		onCloseBurger();
 	}
+
 	return (
 		<>
 			<button className="" onClick={onOpenBurger}>

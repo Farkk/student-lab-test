@@ -1,6 +1,8 @@
 import { DataQuotes } from '@/components/models/models'
 import MainLayout from '@/components/mainLayout/MainLayout'
 import Quote from '@/components/quote/Quote'
+import { RequestAllTag } from '@/utilities/requests/RequestAllTags'
+import { RequestPopularQuotes } from '@/utilities/requests/RequestPopularQuotes'
 
 export default function Home({ data, tags }: DataQuotes) {
 	return (
@@ -17,15 +19,11 @@ export default function Home({ data, tags }: DataQuotes) {
 }
 
 Home.getInitialProps = async () => {
-	const response = await fetch(`https://api.quotable.io/quotes/?tags=famous-quotes`)
-	const json: DataQuotes[] = await response.json()
-
-	const responsetags = await fetch('https://api.quotable.io/tags')
-	const jsontags: DataQuotes[] = await responsetags.json()
-
+	const jsonData = await RequestPopularQuotes()
+	const jsonTags = await RequestAllTag()
 	return {
-		data: json,
-		tags: jsontags
+		data: jsonData,
+		tags: jsonTags
 	}
 }
 

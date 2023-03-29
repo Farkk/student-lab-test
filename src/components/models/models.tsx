@@ -14,9 +14,7 @@ export interface DataQuotes extends allTags {
 			}
 		]
 	}
-
 }
-
 
 export interface DataQuotesTag extends DataQuotes {
 	query: string
