@@ -3,10 +3,10 @@ export interface childrenProps extends allTags {
 	header: string
 }
 
-export interface DataQuetes extends allTags {
+export interface DataQuotes extends allTags {
 	data: {
 		results: [
-			quete: {
+			quote: {
 				_id: string,
 				content: string,
 				author: string,
@@ -18,7 +18,7 @@ export interface DataQuetes extends allTags {
 }
 
 
-export interface DataQuetesTag extends DataQuetes {
+export interface DataQuotesTag extends DataQuotes {
 	query: string
 }
 

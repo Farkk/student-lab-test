@@ -14,7 +14,7 @@ export default function Button({ btnId }: btnProps) {
 
 	useEffect(() => {
 		setIsLike(JSON.parse(localStorage.getItem(`${btnId}`) || 'false'))
-	}, [isBrowser])
+	}, [btnId, isBrowser])
 
 	const onClickToLike = () => {
 		const isNewLike = JSON.parse(localStorage.getItem(`${btnId}`) || 'false')

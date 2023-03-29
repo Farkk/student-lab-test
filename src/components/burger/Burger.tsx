@@ -4,6 +4,7 @@ import { RxCross2 } from 'react-icons/rx'
 import { allTags } from "../models/models"
 import Categories from "../categories/Categories"
 import { useRouter } from "next/router"
+
 export default function Burger({ tags }: allTags) {
 	const query: any = useRouter().query.id
 

@@ -1,8 +1,8 @@
-import { DataQuetesTag, Query } from '@/components/models/models'
+import { DataQuotesTag, Query } from '@/components/models/models'
 import TagQuote from '@/components/tagQuote/TagQuote'
 import MainLayout from '@/components/mainLayout/MainLayout'
 
-export default function Tag(data: DataQuetesTag) {
+export default function Tag(data: DataQuotesTag) {
 	let newStr = data.query[0].toUpperCase() + data.query.slice(1, data.query.length)
 	return (
 		<>
@@ -16,10 +16,10 @@ export default function Tag(data: DataQuetesTag) {
 
 Tag.getInitialProps = async ({ query }: Query) => {
 	const responseTags = await fetch('https://api.quotable.io/tags')
-	const jsonTags: DataQuetesTag[] = await responseTags.json()
+	const jsonTags: DataQuotesTag[] = await responseTags.json()
 
 	const response = await fetch(`https://api.quotable.io/quotes/?tags=${query.id}`)
-	const json: DataQuetesTag[] = await response.json()
+	const json: DataQuotesTag[] = await response.json()
 
 	return {
 		data: json,

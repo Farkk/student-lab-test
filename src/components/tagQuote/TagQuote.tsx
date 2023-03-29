@@ -1,7 +1,7 @@
-import { DataQuetes } from '@/components/models/models'
+import { DataQuotes } from '@/components/models/models'
 import Quote from '../quote/Quote'
 
-export default function TagQuote({ data }: DataQuetes) {
+export default function TagQuote({ data }: DataQuotes) {
 	return (
 		<>
 			{
