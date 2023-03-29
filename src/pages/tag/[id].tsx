@@ -1,9 +1,10 @@
 import { DataQuotesTag, Query } from '@/components/models/models'
 import TagQuote from '@/components/tagQuote/TagQuote'
 import MainLayout from '@/components/mainLayout/MainLayout'
+import { FirstSymbolToUpperCase } from '@/components/utilities/firstSymbolToUpperCase'
 
 export default function Tag(data: DataQuotesTag) {
-	let newStr = data.query[0].toUpperCase() + data.query.slice(1, data.query.length)
+	const newStr = FirstSymbolToUpperCase(data.query)
 	return (
 		<>
 			<MainLayout header={newStr} tags={data.tags}>
