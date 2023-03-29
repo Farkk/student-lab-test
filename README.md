@@ -9,3 +9,7 @@
   <li>Страницы, отображающие афоризмы из конкретной категории</li>
   <li>Также есть возможность поставить лайк понравившемуся афоризму</li>
 </ul>
+
+<img src="https://www.pngfind.com/pngs/m/685-6854970_react-logo-png-png-download-logo-png-reactjs.png"/>
+<img/>
+<img/>
