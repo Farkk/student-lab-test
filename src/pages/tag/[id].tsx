@@ -1,5 +1,5 @@
 import { DataQuotesTag, Query } from '@/models/models'
-import { firstSymbolToUpperCase } from '@/utilities/textToUpperCase/firstSymbolToUpperCase'
+import { firstSymbolToUpperCase } from '@/utilities/firstSymbolToUpperCase'
 import { requestByTag } from '@/requests/requestByTag'
 import { requestAllTags } from '@/requests/requestAllTags'
 import MainLayout from '@/layouts/MainLayout'

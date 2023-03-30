@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { AllTags } from '@/models/models'
-import { firstSymbolToUpperCase } from '@/utilities/textToUpperCase/firstSymbolToUpperCase'
+import { firstSymbolToUpperCase } from '@/utilities/firstSymbolToUpperCase'
 
 export default function Categories({ tags }: AllTags) {
 	const firstColumnOfCategories = () => {
