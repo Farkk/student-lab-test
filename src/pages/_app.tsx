@@ -1,7 +1,8 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
 import Router from 'next/router'
 import { useState } from 'react'
+import type { AppProps } from 'next/app'
+
+import '@/styles/globals.css'
 import Spinner from '@/components/spinner/Spinner'
 
 export default function App({ Component, pageProps }: AppProps) {

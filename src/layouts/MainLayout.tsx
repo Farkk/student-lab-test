@@ -1,9 +1,10 @@
-import { childrenProps } from "../models/models"
 import Head from "next/head"
-import { GrHomeRounded } from 'react-icons/gr'
-import Categories from "../categories/Categories"
 import Link from "next/link"
-import Burger from "../burger/Burger"
+import { GrHomeRounded } from 'react-icons/gr'
+
+import { childrenProps } from "@/models/models"
+import Categories from "../components/categories/Categories"
+import Burger from "../components/burger/Burger"
 
 export default function MainLayout({ children, header, tags }: childrenProps) {
 	return (

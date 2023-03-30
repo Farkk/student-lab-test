@@ -1,11 +1,12 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
 import { BiMenu } from 'react-icons/bi'
 import { RxCross2 } from 'react-icons/rx'
-import { allTags } from "../models/models"
-import Categories from "../categories/Categories"
-import { useRouter } from "next/router"
 
-export default function Burger({ tags }: allTags) {
+import { AllTags } from "@/models/models"
+import Categories from "../categories/Categories"
+
+export default function Burger({ tags }: AllTags) {
 	const query: any = useRouter().query.id
 	const [close, setClose] = useState('hidden')
 	const [queryId, setQueryId] = useState('')

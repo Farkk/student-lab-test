@@ -1,20 +1,16 @@
-import { DataQuotesTag, Query } from '@/components/models/models'
-import MainLayout from '@/components/mainLayout/MainLayout'
-import Quote from '@/components/quote/Quote'
+import { DataQuotesTag, Query } from '@/models/models'
 import { firstSymbolToUpperCase } from '@/utilities/textToUpperCase/firstSymbolToUpperCase'
-import { requestByTag } from '@/utilities/requests/requestByTag'
-import { requestAllTags } from '@/utilities/requests/requestAllTags'
+import { requestByTag } from '@/requests/requestByTag'
+import { requestAllTags } from '@/requests/requestAllTags'
+import MainLayout from '@/layouts/MainLayout'
+import Quote from '@/components/quote/Quote'
 
 export default function Tag({ data, tags, query }: DataQuotesTag) {
 	const newStr = firstSymbolToUpperCase(query)
 	return (
 		<MainLayout header={newStr} tags={tags}>
 			{
-				data.results.map(quote => {
-					return (
-						<Quote key={quote._id} quote={quote} />
-					)
-				})
+				data.results.map(quote => <Quote key={quote._id} quote={quote} />)
 			}
 		</MainLayout>
 	)

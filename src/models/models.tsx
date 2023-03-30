@@ -1,9 +1,9 @@
-export interface childrenProps extends allTags {
+export interface childrenProps extends AllTags {
 	children: React.ReactNode,
 	header: string
 }
 
-export interface DataQuotes extends allTags {
+export interface DataQuotes extends AllTags {
 	data: {
 		results: [
 			quote: {
@@ -20,7 +20,7 @@ export interface DataQuotesTag extends DataQuotes {
 	query: string
 }
 
-export interface allTags {
+export interface AllTags {
 	tags: [
 		tagsObj: {
 			name: string,
@@ -45,6 +45,6 @@ export interface Query {
 	}
 }
 
-export interface btnProps {
+export interface BtnProps {
 	btnId: string,
 }

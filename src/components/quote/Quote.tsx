@@ -1,5 +1,5 @@
+import { QuoteProps } from "@/models/models"
 import Button from "../button/Button"
-import { QuoteProps } from "../models/models"
 
 export default function Quote({ quote }: QuoteProps) {
 	return (

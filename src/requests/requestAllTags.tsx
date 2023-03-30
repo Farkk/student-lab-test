@@ -1,4 +1,4 @@
-import { DataQuotes } from "@/components/models/models"
+import { DataQuotes } from "@/models/models"
 
 export async function requestAllTags() {
 	const responseTags = await fetch('https://api.quotable.io/tags')

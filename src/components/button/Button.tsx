@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import { AiFillHeart } from 'react-icons/ai'
 import { AiOutlineHeart } from 'react-icons/ai'
-import { btnProps } from "../models/models"
 
-export default function Button({ btnId }: btnProps) {
+import { BtnProps } from "@/models/models"
+
+export default function Button({ btnId }: BtnProps) {
 	const [isBrowser, setIsBrowser] = useState(false)
 	const [isLike, setIsLike] = useState(false)
 

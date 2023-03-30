@@ -1,4 +1,4 @@
-import svgSpinner from './Spinner.svg'
+import svgSpinner from '../assets/Spinner.svg'
 
 export default function Spinner() {
 	const Spinner: any = svgSpinner
