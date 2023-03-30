@@ -1,46 +1,14 @@
-import Link from 'next/link'
-
 import { AllTags } from '@/models/models'
-import { firstSymbolToUpperCase } from '@/utilities/firstSymbolToUpperCase'
+import { firstColumnOfCategories, secondColumnOfCategories } from '@/utilities/generateColumnOfCategories'
 
-export default function Categories({ tags }: AllTags) {
-	const firstColumnOfCategories = () => {
-		return (
-			tags.map((tag, i) => {
-				if (tag.quoteCount && tag.name != "famous-quotes") {
-					const newName = firstSymbolToUpperCase(tag.name)
-					if (i < 23) {
-						return (
-							<li className='text-sm' key={tag._id}><Link href={`/tag/${tag.name}`}>{newName}</Link></li>
-						)
-					}
-				}
-			})
-		)
-	}
-
-	const secondColumnOfCategories = () => {
-		return (
-			tags.map((tag, i) => {
-				if (tag.quoteCount && tag.name != "famous-quotes") {
-					const newName = firstSymbolToUpperCase(tag.name)
-					if (i > 23) {
-						return (
-							<li className='text-sm' key={tag._id}><Link href={`/tag/${tag.name}`}>{newName}</Link></li>
-						)
-					}
-				}
-			})
-		)
-	}
-
+export default function Categories(tags: AllTags) {
 	return (
 		<>
 			<ul>
-				{tags && firstColumnOfCategories()}
+				{tags && firstColumnOfCategories(tags)}
 			</ul>
 			<ul>
-				{tags && secondColumnOfCategories()}
+				{tags && secondColumnOfCategories(tags)}
 			</ul>
 		</>
 	)
