@@ -1,6 +1,6 @@
 import { DataQuotes } from "@/components/models/models"
 
-export const RequestByTag = async (tag: string) => {
+export async function requestByTag(tag: string) {
 	const url = `https://api.quotable.io/quotes/?tags=${tag}`
 
 	const response = await fetch(url)

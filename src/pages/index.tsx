@@ -1,9 +1,7 @@
 import { DataQuotes } from '@/components/models/models'
 import MainLayout from '@/components/mainLayout/MainLayout'
 import Quote from '@/components/quote/Quote'
-import { RequestAllTag } from '@/utilities/requests/RequestAllTags'
-import { RequestPopularQuotes } from '@/utilities/requests/RequestPopularQuotes'
-
+	
 export default function Home({ data, tags }: DataQuotes) {
 	return (
 		<MainLayout header={'Popular quotes'} tags={tags}>
@@ -19,8 +17,8 @@ export default function Home({ data, tags }: DataQuotes) {
 }
 
 Home.getInitialProps = async () => {
-	const jsonData = await RequestPopularQuotes()
-	const jsonTags = await RequestAllTag()
+	const jsonData = await requestPopularQuotes()
+	const jsonTags = await requestAllTags()
 	return {
 		data: jsonData,
 		tags: jsonTags

@@ -1,7 +1,7 @@
 import React from 'react'
 import { allTags } from '../models/models'
 import Link from 'next/link'
-import { FirstSymbolToUpperCase } from '@/utilities/textToUpperCase/FirstSymbolToUpperCase'
+import { FirstSymbolToUpperCase } from '@/utilities/textToUpperCase/firstSymbolToUpperCase'
 
 export default function Categories({ tags }: allTags) {
 	return (

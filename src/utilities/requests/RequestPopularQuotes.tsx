@@ -1,6 +1,6 @@
 import { DataQuotes } from "@/components/models/models"
 
-export const RequestPopularQuotes = async () => {
+export async function requestPopularQuotes() {
 	const url = `https://api.quotable.io/quotes/?tags=famous-quotes`
 
 	const response = await fetch(url)

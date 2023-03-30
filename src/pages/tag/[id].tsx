@@ -1,12 +1,11 @@
 import { DataQuotesTag, Query } from '@/components/models/models'
 import MainLayout from '@/components/mainLayout/MainLayout'
-import { FirstSymbolToUpperCase } from '@/utilities/textToUpperCase/FirstSymbolToUpperCase'
 import Quote from '@/components/quote/Quote'
-import { RequestAllTag } from '@/utilities/requests/RequestAllTags'
-import { RequestByTag } from '@/utilities/requests/RequestByTag'
+import { firstSymbolToUpperCase } from '@/utilities/textToUpperCase/firstSymbolToUpperCase'
+
 
 export default function Tag({ data, tags, query }: DataQuotesTag) {
-	const newStr = FirstSymbolToUpperCase(query)
+	const newStr = firstSymbolToUpperCase(query)
 	return (
 		<MainLayout header={newStr} tags={tags}>
 			{
@@ -21,8 +20,8 @@ export default function Tag({ data, tags, query }: DataQuotesTag) {
 }
 
 Tag.getInitialProps = async ({ query }: Query) => {
-	const jsonData = await RequestByTag(query.id)
-	const jsonTags = await RequestAllTag()
+	const jsonData = await requestByTag(query.id)
+	const jsonTags = await requestAllTags()
 	
 	return {
 		data: jsonData,
