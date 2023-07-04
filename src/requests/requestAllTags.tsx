@@ -1,8 +1,13 @@
-import { DataQuotes } from "@/models/models"
+import { DataQuotes } from "@/models/models";
+import axios from "axios";
 
 export async function requestAllTags() {
-  const responseTags = await fetch('https://api.quotable.io/tags')
-  const json: DataQuotes[] = await responseTags.json()
-
-  return json
+  const url: string = "https://api.quotable.io/tags";
+  
+  try {
+    const responseTags: DataQuotes[] = await axios(url).then((res) => res.data);
+    return responseTags;
+  } catch (err) {
+    console.log(err);
+  }
 }

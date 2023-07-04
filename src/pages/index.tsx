@@ -6,6 +6,7 @@ import Quote from '@/components/quote/Quote'
 
 export default function Home({ data, tags }: DataQuotes) {
   return (
+    
     <MainLayout header={'Popular quotes'} tags={tags}>
       {
         data.results.map(quote => <Quote key={quote._id} quote={quote} />)

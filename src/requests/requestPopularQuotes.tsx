@@ -1,10 +1,13 @@
-import { DataQuotes } from "@/models/models"
+import { DataQuotes } from "@/models/models";
+import axios from "axios";
 
 export async function requestPopularQuotes() {
-  const url = `https://api.quotable.io/quotes/?tags=famous-quotes`
+  const url = `https://api.quotable.io/quotes/?tags=famous-quotes`;
 
-  const response = await fetch(url)
-  const json: DataQuotes[] = await response.json()
-
-  return json
+  try {
+    const response: DataQuotes[] = await axios(url).then((res) => res.data);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
 }
